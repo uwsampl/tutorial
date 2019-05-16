@@ -53,9 +53,6 @@ and get up to speed using TVM to solve your problems. This tutorial first provid
 a short and high-level summary of TVM, and then splits into focused areas.
 
 
-
-
-
 If you already know "Why TVM?" you can jump right in with tutorials which demonstrate
 common use cases:
     ...
@@ -106,22 +103,36 @@ TVM introduces ML-based automatic optimization, and build an end to end compiler
 
 *Could you provide some examples of how TVM is being used?*
 
-Facebook
-Optimize for mobile(vision) and server workloads(ads): https://sampl.cs.washington.edu/tvmconf/slides/Andrew-Tulloch-TVM-FB.pdf
-They improved TVM and  did an internal benchmark(vs Glow)
-https://discuss.tvm.ai/t/improved-direct-winograd-nchwc-cpu-implementation-with-resnet-50-results/1017
-A recent paper using new conv variants(optimized using TVM)
-https://arxiv.org/pdf/1904.05049.pdf
-AWS
+There are quite a few users of TVM in the wild, we explain
+a few interesting ones selected from industry and academia
+below.
+
+Facebook is using TVM to optimize models on mobile (vision task)
+and server workloads(for advertising)[FacebookOpt]_.
+Facebook has contributed back to TVM, and provided
+benchmarking against Glow[FacebookGlowBench]_. They recently have also
+made use of TVM in research as well[FacebookOctave]_.
+
+
+
+Amazon Web Services (AWS) has also contributed heavily to
+TVM, and has talked about using it in AWS's deep learning
+compiler service[AWSTalk]_, specifically providing state-of-the-art
+performance on x86 [AWSPaper]_.
 Deep learning compilers services using TVM
-https://sampl.cs.washington.edu/tvmconf/slides/Yida-Wang-TVM-AWS.pdf
-Optimized TVM, outperform intel’s in-house solution
-https://arxiv.org/pdf/1809.02697.pdf
 
-Berkeley
-Use TVM to build secure and private-aware solutions
-https://arxiv.org/pdf/1807.06689.pdf
 
-MIT
-http://fastdepth.mit.edu/2019_icra_fastdepth.pdf
+
+In academia researchers at Berkeley have used it to build
+a secure and privacy-aware solution for ML[BerkeleyPaper],
+and researchers at MIT have applied TVM to robotics tasks
+as well [MITPaper]_.
+
+.. [FacebookOpt] https://sampl.cs.washington.edu/tvmconf/slides/Andrew-Tulloch-TVM-FB.pdf
+.. [FacebookGlowBench] https://discuss.tvm.ai/t/improved-direct-winograd-nchwc-cpu-implementation-with-resnet-50-results/1017
+.. [FacebookOctave] https://arxiv.org/pdf/1904.05049.pdf
+.. [AWSTalk] https://sampl.cs.washington.edu/tvmconf/slides/Yida-Wang-TVM-AWS.pdf
+.. [AWSPaper]  https://arxiv.org/pdf/1809.02697.pdf
+.. [BerkeleyPaper]: https://arxiv.org/pdf/1807.06689.pdf
+.. [MITPaper] http://fastdepth.mit.edu/2019_icra_fastdepth.pdf
 
