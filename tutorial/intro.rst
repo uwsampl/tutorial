@@ -2,6 +2,10 @@
 TVM: For Fun and Profit
 =======================
 
+----------------------
+Introduction: Why TVM?
+----------------------
+
 Upon hearing about TVM, you are excited to accelerate your ML application
 and navigate to the Github or website. Both describe TVM as an end-to-end
 deep learning compiler. **What does that mean for you?**
@@ -33,16 +37,14 @@ Facebook uses it to optimize for both mobile and server workloads,
 AWS uses it to optimize for deep learning deployment services.
 Berkeley uses it to provide secured and privacy aware ML stack.
 
-In order to bring these improvements, we need use machine learning to optimize tensor
-programs(AutoTVM) and build a full stack solution including high-level differentiable IR(relay),
+TVM provides this functionality via several systems which *must* interoperate. We use machine learning to
+optimize tensor programs (AutoTVM), a full stack solution including high-level differentiable IR (Relay),
 tensor expression and optimization search space, distributed runtime environment, and hardware runtime.
 We need to co-design these layers together so that high-level IR can generate hints for hardware runtime, and
 we can collect feedbacks to the machine learning algorithm in our distributed experimentation infrastructure.
 
-
-Just like compiler frameworks before it such as LLVM,
-TVM provides a useful set of common tools and abstractions for producing high
-performance, machine specific code. TVM helps you focus on the interesting and
+TVM, like compiler frameworks such as LLVM, provides a useful set of common tools and abstractions
+for producing high performance, machine specific code. TVM helps you focus on the interesting and
 important details of your work and leaves the framework to solve systems challenges
 once and for all.
 
@@ -51,7 +53,34 @@ and get up to speed using TVM to solve your problems. This tutorial first provid
 a short and high-level summary of TVM, and then splits into focused areas.
 
 
-Relations between TVM and Halide
+
+
+
+If you already know "Why TVM?" you can jump right in with tutorials which demonstrate
+common use cases:
+    ...
+
+If you are looking for help using TVM's APIs one can find a complete
+API listing for both the Python and C++ APIs here and here.
+
+If you have question please check out the discussion forum: `discuss.tvm.ai`.
+
+Now back to the TVM stack.
+
+TVM is a large project full of sub-systems which connect to make the whole system.
+
+
+First we will cover the architecture, and design of TVM as a system.
+Next we will discuss TVM's tensor IR, used for defining dense linear
+algebra primitives such as convolution, and matrix multiplication.
+We will next
+We will then talk abou
+
+---
+FAQ
+---
+
+*What is the relationship between TVM and Halide?*
 
 Halide is an image processing language, more recently it has been rebranded to a general purpose language for data-parallel processing. Halide introduces an important concept of compute-schedule separation. TVM used Halide’s IR structure as a basis of the tensor expression IR layer. Note that TVM introduced many more components other than the tensor IR layer, all of which need to work together to for, end to end machine learning optimization. The following section will focus on the difference between TVM’s Tensor IR layer and Halide.
 
@@ -75,7 +104,7 @@ Summary
 TVM introduces ML-based automatic optimization, and build an end to end compiler that deploys ML workloads to diverse hardware backends. The stack from existing solutions both in terms of the need for more components and co-design in the tensor IR layer.
 
 
-Appendix: Links to TVM’s Impact and Use Cases
+*Could you provide some examples of how TVM is being used?*
 
 Facebook
 Optimize for mobile(vision) and server workloads(ads): https://sampl.cs.washington.edu/tvmconf/slides/Andrew-Tulloch-TVM-FB.pdf
@@ -95,30 +124,4 @@ https://arxiv.org/pdf/1807.06689.pdf
 
 MIT
 http://fastdepth.mit.edu/2019_icra_fastdepth.pdf
-
-
-First we will cover the architecture, and design of TVM as a system.
-Next we will discuss TVM's tensor IR, used for defining dense linear
-algebra primitives such as convolution, and matrix multiplication.
-We will next
-We will then talk abou
-
-
-
-If you already know "Why TVM?" you can jump right in with tutorials which demonstrate
-common use cases:
-    ...
-
-If you are looking for help using TVM's APIs one can find a complete
-API listing for both the Python and C++ APIs here and here.
-
-If you have question please check out the discussion forum: `discuss.tvm.ai`.
-
-Now back to the TVM stack.
-
-TVM is a large project full of sub-systems which connect to make the whole system.
-
-
-
-
 
